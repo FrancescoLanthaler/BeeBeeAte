@@ -22763,6 +22763,10 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <part name="FRAME3" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device="" value="Treiber"/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device="" value="Power Supply"/>
 <part name="FRAME4" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="A4L-LOC" device="" value="MPU6050"/>
+<part name="U$28" library="03lanfra-PADS" deviceset="LITZENPAD" device="" value="9V+"/>
+<part name="U$29" library="03lanfra-PADS" deviceset="LITZENPAD" device="" value="9V-"/>
+<part name="U$30" library="03lanfra-PADS" deviceset="LITZENPAD" device="" value="9VSW+"/>
+<part name="U$31" library="03lanfra-PADS" deviceset="LITZENPAD" device="" value="9VSW-"/>
 </parts>
 <sheets>
 <sheet>
@@ -22786,9 +22790,9 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <instance part="GND3" gate="1" x="129.54" y="99.06" smashed="yes">
 <attribute name="VALUE" x="127" y="96.52" size="1.778" layer="96"/>
 </instance>
-<instance part="R5" gate="G$1" x="121.92" y="114.3" smashed="yes">
-<attribute name="NAME" x="118.11" y="115.7986" size="1.778" layer="95"/>
-<attribute name="VALUE" x="118.11" y="110.998" size="1.778" layer="96"/>
+<instance part="R5" gate="G$1" x="114.3" y="114.3" smashed="yes">
+<attribute name="NAME" x="110.49" y="115.7986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="110.49" y="110.998" size="1.778" layer="96"/>
 </instance>
 <instance part="D1" gate="G$1" x="154.94" y="121.92" smashed="yes" rot="R180">
 <attribute name="NAME" x="157.2514" y="119.2784" size="1.778" layer="95" rot="R180"/>
@@ -22879,6 +22883,22 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <attribute name="LAST_DATE_TIME" x="217.17" y="10.16" size="2.286" layer="94"/>
 <attribute name="SHEET" x="230.505" y="5.08" size="2.54" layer="94"/>
 </instance>
+<instance part="U$28" gate="G$1" x="43.18" y="119.38" smashed="yes" rot="R270">
+<attribute name="NAME" x="45.72" y="121.92" size="1.27" layer="95" rot="R270"/>
+<attribute name="VALUE" x="39.37" y="121.92" size="1.27" layer="96" rot="R270"/>
+</instance>
+<instance part="U$29" gate="G$1" x="50.8" y="119.38" smashed="yes" rot="R270">
+<attribute name="NAME" x="53.34" y="121.92" size="1.27" layer="95" rot="R270"/>
+<attribute name="VALUE" x="46.99" y="121.92" size="1.27" layer="96" rot="R270"/>
+</instance>
+<instance part="U$30" gate="G$1" x="43.18" y="106.68" smashed="yes" rot="R90">
+<attribute name="NAME" x="40.64" y="104.14" size="1.27" layer="95" rot="R90"/>
+<attribute name="VALUE" x="46.99" y="104.14" size="1.27" layer="96" rot="R90"/>
+</instance>
+<instance part="U$31" gate="G$1" x="43.18" y="99.06" smashed="yes" rot="R270">
+<attribute name="NAME" x="45.72" y="101.6" size="1.27" layer="95" rot="R270"/>
+<attribute name="VALUE" x="39.37" y="101.6" size="1.27" layer="96" rot="R270"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -22888,16 +22908,6 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <wire x1="73.66" y1="88.9" x2="73.66" y2="83.82" width="0.1524" layer="91"/>
 <label x="73.66" y="83.82" size="1.778" layer="95" rot="R270" xref="yes"/>
 <pinref part="LTZPDGND" gate="G$1" pin="P$1"/>
-</segment>
-<segment>
-<pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="114.3" y1="114.3" x2="116.84" y2="114.3" width="0.1524" layer="91"/>
-<label x="114.3" y="114.3" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="R11" gate="G$1" pin="1"/>
-<wire x1="114.3" y1="76.2" x2="116.84" y2="76.2" width="0.1524" layer="91"/>
-<label x="114.3" y="76.2" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="3V3" class="0">
@@ -22957,10 +22967,15 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <wire x1="134.62" y1="71.12" x2="134.62" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="GND13" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="U$29" gate="G$1" pin="P$1"/>
+<wire x1="50.8" y1="114.3" x2="50.8" y2="109.22" width="0.1524" layer="91"/>
+<label x="50.8" y="109.22" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="N$4" class="0">
 <segment>
-<wire x1="127" y1="114.3" x2="129.54" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="114.3" x2="129.54" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="129.54" y1="114.3" x2="134.62" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="129.54" y1="114.3" x2="129.54" y2="111.76" width="0.1524" layer="91"/>
@@ -23019,12 +23034,38 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <pinref part="U2" gate="A" pin="OUT"/>
 </segment>
 </net>
+<net name="N$15" class="0">
+<segment>
+<pinref part="U$28" gate="G$1" pin="P$1"/>
+<pinref part="U$30" gate="G$1" pin="P$1"/>
+<wire x1="43.18" y1="114.3" x2="43.18" y2="111.76" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="9V" class="0">
+<segment>
+<pinref part="U$31" gate="G$1" pin="P$1"/>
+<wire x1="43.18" y1="93.98" x2="43.18" y2="88.9" width="0.1524" layer="91"/>
+<label x="43.18" y="88.9" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="1"/>
+<wire x1="114.3" y1="114.3" x2="109.22" y2="114.3" width="0.1524" layer="91"/>
+<label x="109.22" y="114.3" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R11" gate="G$1" pin="1"/>
+<wire x1="114.3" y1="76.2" x2="116.84" y2="76.2" width="0.1524" layer="91"/>
+<label x="114.3" y="76.2" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
 </nets>
 </sheet>
 <sheet>
 <description>ESP32 und USB Modul</description>
 <plain>
 <text x="22.86" y="127" size="1.778" layer="91">USB</text>
+<text x="147.32" y="119.38" size="1.778" layer="150">D3 weglassen</text>
+<text x="147.32" y="116.84" size="1.778" layer="150">Eventuell 0Ohm</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="187.96" y="187.96" smashed="yes">

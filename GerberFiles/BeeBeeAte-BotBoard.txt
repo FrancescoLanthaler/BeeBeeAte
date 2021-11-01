@@ -1,0 +1,52 @@
+Partlist exported from C:/Users/franz/Documents/Schule/5AEL/TPS/BeeBeeAte Boards/BeeBeeAte/BeeBeeAte-BotBoard.sch at 28/10/2021 10:12
+
+Part     Value          Device                             Package                                   Description                                                                                                           
+D1       1N4007         1N4007                             DO-41                                     DIODE GEN PURP 1KV 1A DO41                                                    
+D2       1N4007         1N4007                             DO-41                                     DIODE GEN PURP 1KV 1A DO41                                                    
+D3       1N4007         1N4007                             DO-41                                     DIODE GEN PURP 1KV 1A DO41                                                    
+                         
+JP1      MOTOR2         PINHD-1X4                          1X04                                      PIN HEADER                                                                    
+JP2      MOTOR3         PINHD-1X4                          1X04                                      PIN HEADER                                                                    
+JP3      MOTOR1         PINHD-1X4                          1X04                                      PIN HEADER                                                                    
+JP4      MOTOR4         PINHD-1X4                          1X04                                      PIN HEADER                                                                    
+
+KK1      HS1            SK95-2M3                           SK95-2M3                                  HEATSINK manufacturer Fischer/distributor Buerklin                            
+KK2      HS2            SK95-2M3                           SK95-2M3                                  HEATSINK manufacturer Fischer/distributor Buerklin                            
+
+MPU6050  MPU6050        PINHD-1X8                          1X08                                      PIN HEADER                                                                    
+                                            
+R3       0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R4       0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R5       0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+
+R11      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R12      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R13      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+
+R16      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R17      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R18      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R19      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R20      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R21      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R22      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R23      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R24      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R25      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R26      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R27      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R28      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R29      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R30      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R31      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+R32      0              R-EU_R0805                         R0805                                     RESISTOR, European symbol                                                     
+
+S1       BOOT           10-XX                              B3F-10XX                                  OMRON SWITCH                                                                  
+S2       RESET          10-XX                              B3F-10XX                                  OMRON SWITCH                                                                  
+                    
+U2       LM5.0          LM1117T-5.0                        TO254P1054X470X1955-3                     Check prices                                                                  
+U3       DRIVER 2       A4988_STEPPER_MOTOR_DRIVER_CARRIER MODULE_A4988_STEPPER_MOTOR_DRIVER_CARRIER Stepper motor controler; IC: A4988; 1A; Uin mot: 8÷35V Check prices           
+U4       DRIVER 1       A4988_STEPPER_MOTOR_DRIVER_CARRIER MODULE_A4988_STEPPER_MOTOR_DRIVER_CARRIER Stepper motor controler; IC: A4988; 1A; Uin mot: 8÷35V Check prices           
+U5       DRIVER 3       A4988_STEPPER_MOTOR_DRIVER_CARRIER MODULE_A4988_STEPPER_MOTOR_DRIVER_CARRIER Stepper motor controler; IC: A4988; 1A; Uin mot: 8÷35V Check prices           
+U6       DRIVER 4       A4988_STEPPER_MOTOR_DRIVER_CARRIER MODULE_A4988_STEPPER_MOTOR_DRIVER_CARRIER Stepper motor controler; IC: A4988; 1A; Uin mot: 8÷35V Check prices           
+VR1      LM3.3          LM1117T-3.3/NOPB                   TO254P1054X470X1955-3                     Check prices                                                                  
