@@ -1,0 +1,59 @@
+Partlist exported from C:/Users/Francesco/Documents/Schule/5AEL/TPS/BeeBeeAteAktuell/BeeBeeAte-RemoteBoard.sch at 11/3/2021 10:42 AM
+
+Part Value          Device              Package               Description                                                                   
+C1   100n           C-EUC0805           C0805                 CAPACITOR, European symbol                                                    
+C2   1u             C-EUC0805           C0805                 CAPACITOR, European symbol                                                    
+C3   1u             C-EUC0805           C0805                 CAPACITOR, European symbol                                                    
+C4   10u            C-EUC0805           C0805                 CAPACITOR, European symbol                                                    
+C5   100n           C-EUC0805           C0805                 CAPACITOR, European symbol                                                    
+C6   10u            C-EUC0805           C0805                 CAPACITOR, European symbol                                                    
+C7   100n           C-EUC0805           C0805                 CAPACITOR, European symbol                                                    
+C8   1u             C-EUC0805           C0805                 CAPACITOR, European symbol                                                    
+C9   1u             C-EUC0805           C0805                 CAPACITOR, European symbol                                                    
+D1   1N4007         1N4007              DO-41                 DIODE GEN PURP 1KV 1A DO41                                                    
+D2   1N4007         1N4007              DO-41                 DIODE GEN PURP 1KV 1A DO41                                                    
+IC1  CP2102         CP2102              MLP28                 Single-Chip USB to UART Bridge                                                
+J1   3-1734035-2    3-1734035-2         TE_3-1734035-2        USB Connectors MINI USB, R/A, SMT, MATTE TIN, W/O MYLAR Check prices          
+JP1  VOLTAGE        PINHD-1X2           1X02                  PIN HEADER                                                                    
+JP2  SWITCH         PINHD-1X2           1X02                  PIN HEADER                                                                    
+KK2  SK95-2M3       SK95-2M3            SK95-2M3              HEATSINK manufacturer Fischer/distributor Buerklin                            
+KK3  SK95-2M3       SK95-2M3            SK95-2M3              HEATSINK manufacturer Fischer/distributor Buerklin                            
+LED1 RED            LEDCHIP-LED0805     CHIP-LED0805          LED                                                                           
+R1   5.1K           R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R2   470            R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R3   0              R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R4   0              R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R5   0              R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R6   470            R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R7   12K            R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R8   470            R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R9   470            R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R10  1k             R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R11  0              R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R12  0              R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R13  0              R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R14  12k            R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R15  12k            R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R16  0              R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R17  0              R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R18  0              R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R33  4.7k           R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+R34  5.1k           R-EU_R0805          R0805                 RESISTOR, European symbol                                                     
+S1   BOOT           10-XX               B3F-10XX              OMRON SWITCH                                                                  
+S2   RESET          10-XX               B3F-10XX              OMRON SWITCH                                                                  
+SV1  JOYSTICK       PINHD-1X5/90        1X05/90               PIN HEADER                                                                    
+T1   S8050          BC808-NPN-SOT23-BEC SOT23-BEC             NPN Transistror                                                               
+T2   S8050          BC808-NPN-SOT23-BEC SOT23-BEC             NPN Transistror                                                               
+U$1  VRY            MESSPAD             MESSPAD                                                                                             
+U$2  VRX            MESSPAD             MESSPAD                                                                                             
+U$3  SW             MESSPAD             MESSPAD                                                                                             
+U$4  VCC            MESSPAD             MESSPAD                                                                                             
+U$5  3V3            MESSPAD             MESSPAD                                                                                             
+U$6  RXD            MESSPAD             MESSPAD                                                                                             
+U$7  TXD            MESSPAD             MESSPAD                                                                                             
+U$8  VCC            MESSPAD             MESSPAD                                                                                             
+U$9  5V             MESSPAD             MESSPAD                                                                                             
+U$10 GND            MESSPAD             MESSPAD                                                                                             
+U1   ESP32-WROOM-32 ESP32-WROOM-32      MODULE_ESP32-WROOM-32 Bluetooth, WiFi Transceiver Module 2.4GHz ~ 2.5GHz Surface Mount Check prices 
+U2   LM5.0          LM1117T-5.0         TO254P1054X470X1955-3 Check prices                                                                  
+VR1  LM3.3          LM1117T-3.3/NOPB    TO254P1054X470X1955-3 Check prices                                                                  
