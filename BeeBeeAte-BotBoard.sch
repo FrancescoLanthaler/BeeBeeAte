@@ -22654,8 +22654,8 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="0"/>
 <part name="D2" library="Diodes" library_urn="urn:adsk.eagle:library:11396254" deviceset="1N4007" device="" package3d_urn="urn:adsk.eagle:package:10898391/4"/>
-<part name="LTZPDVCC" library="03lanfra-PADS" deviceset="LITZENPAD" device="" value="SWITCH +"/>
-<part name="LTZPDGND" library="03lanfra-PADS" deviceset="LITZENPAD" device="" value="SWITCH -"/>
+<part name="LTZPDVCC" library="03lanfra-PADS" deviceset="LITZENPAD" device="" value="SW+"/>
+<part name="LTZPDGND" library="03lanfra-PADS" deviceset="LITZENPAD" device="" value="SW-"/>
 <part name="U$10" library="03lanfra-PADS" deviceset="MESSPAD" device="" value="GND"/>
 <part name="U$4" library="03lanfra-PADS" deviceset="MESSPAD" device="" value="VCC"/>
 <part name="U$5" library="03lanfra-PADS" deviceset="MESSPAD" device="" value="3V3"/>
@@ -22790,9 +22790,9 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <instance part="GND3" gate="1" x="129.54" y="99.06" smashed="yes">
 <attribute name="VALUE" x="127" y="96.52" size="1.778" layer="96"/>
 </instance>
-<instance part="R5" gate="G$1" x="114.3" y="114.3" smashed="yes">
-<attribute name="NAME" x="110.49" y="115.7986" size="1.778" layer="95"/>
-<attribute name="VALUE" x="110.49" y="110.998" size="1.778" layer="96"/>
+<instance part="R5" gate="G$1" x="121.92" y="114.3" smashed="yes">
+<attribute name="NAME" x="118.11" y="115.7986" size="1.778" layer="95"/>
+<attribute name="VALUE" x="118.11" y="110.998" size="1.778" layer="96"/>
 </instance>
 <instance part="D1" gate="G$1" x="154.94" y="121.92" smashed="yes" rot="R180">
 <attribute name="NAME" x="157.2514" y="119.2784" size="1.778" layer="95" rot="R180"/>
@@ -22975,7 +22975,7 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 </net>
 <net name="N$4" class="0">
 <segment>
-<wire x1="119.38" y1="114.3" x2="129.54" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="127" y1="114.3" x2="129.54" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="129.54" y1="114.3" x2="134.62" y2="114.3" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="129.54" y1="114.3" x2="129.54" y2="111.76" width="0.1524" layer="91"/>
@@ -23049,8 +23049,8 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 </segment>
 <segment>
 <pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="114.3" y1="114.3" x2="109.22" y2="114.3" width="0.1524" layer="91"/>
-<label x="109.22" y="114.3" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="114.3" y1="114.3" x2="116.84" y2="114.3" width="0.1524" layer="91"/>
+<label x="114.3" y="114.3" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="R11" gate="G$1" pin="1"/>
