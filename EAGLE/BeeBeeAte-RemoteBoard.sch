@@ -13832,6 +13832,7 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <plain>
 <text x="109.22" y="127" size="1.778" layer="91">3V3 VR</text>
 <text x="109.22" y="93.98" size="1.778" layer="91">5V VR</text>
+<text x="45.72" y="139.7" size="6.4516" layer="97">Stromversorgung</text>
 </plain>
 <instances>
 <instance part="C2" gate="G$1" x="124.46" y="111.76" smashed="yes">
@@ -14083,6 +14084,7 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <description>ESP 32</description>
 <plain>
 <text x="66.04" y="121.92" size="1.778" layer="91">USB</text>
+<text x="45.72" y="142.24" size="6.4516" layer="97">ESP32 und USB-Modul</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="193.04" y="193.04" smashed="yes">
@@ -14691,6 +14693,7 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <sheet>
 <description>Joystick</description>
 <plain>
+<text x="86.36" y="119.38" size="6.4516" layer="97">Joystick</text>
 </plain>
 <instances>
 <instance part="FRAME2" gate="G$1" x="0" y="0" smashed="yes">

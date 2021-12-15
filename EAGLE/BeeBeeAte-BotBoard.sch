@@ -22774,6 +22774,7 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <plain>
 <text x="111.76" y="83.82" size="1.778" layer="91">5V VR</text>
 <text x="114.3" y="124.46" size="1.778" layer="91">3V3 VR</text>
+<text x="38.1" y="137.16" size="6.4516" layer="97">Stromversorgung</text>
 </plain>
 <instances>
 <instance part="C2" gate="G$1" x="129.54" y="109.22" smashed="yes">
@@ -23066,6 +23067,7 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <text x="22.86" y="127" size="1.778" layer="91">USB</text>
 <text x="147.32" y="119.38" size="1.778" layer="150">D3 weglassen</text>
 <text x="147.32" y="116.84" size="1.778" layer="150">Eventuell 0Ohm</text>
+<text x="45.72" y="167.64" size="6.4516" layer="97">ESP32 und USB-Modul</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="187.96" y="187.96" smashed="yes">
@@ -23706,6 +23708,7 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <sheet>
 <description>Treiber für Motoren</description>
 <plain>
+<text x="27.94" y="139.7" size="6.4516" layer="97">Motoren Treiber</text>
 </plain>
 <instances>
 <instance part="FRAME3" gate="G$1" x="0" y="0" smashed="yes">
@@ -24464,6 +24467,7 @@ BF959 corrected 2008.03.06&lt;br&gt;</description>
 <sheet>
 <description>MPU6050</description>
 <plain>
+<text x="91.44" y="127" size="6.4516" layer="97">MPU6050</text>
 </plain>
 <instances>
 <instance part="FRAME4" gate="G$1" x="0" y="0" smashed="yes">

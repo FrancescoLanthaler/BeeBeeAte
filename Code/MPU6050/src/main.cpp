@@ -4,9 +4,30 @@
 
 // Variables
 #include <GLOBALS.h>
-#include <motoren.h>
 
 MPU6050 mpu(Wire);
+
+float mpuAngle[3]; // 0 = X, 1 = Y, 2 = Z
+
+// Timer Variables
+unsigned long timeStamp1;
+unsigned long timeStamp2;
+unsigned long interval1 = 1000;
+unsigned long interval2 = 50;
+
+// Joystick Variables
+int joyXValue, joyYValue;
+
+// Methoden
+void SensorAuslesen();
+// extern void MotorenAnsteuern();
+
+// Motoren
+const int STEPS_PER_REV = 1000;
+const int dirPin1 = 18;  // Direction
+const int stepPin1 = 5; // Step
+const int dirPin2 = 18;  // Direction
+const int stepPin2 = 5; // Step
 
 void setup()
 {
@@ -35,10 +56,18 @@ void setup()
   Serial.println("Done!\n");
 }
 
+void SensorAuslesen()
+{
+  mpu.update();
+  mpuAngle[X] = mpu.getAngleX();
+  mpuAngle[Y] = mpu.getAngleY();
+  mpuAngle[Z] = mpu.getAngleZ();
+}
+
 void loop()
 {
   SensorAuslesen();
-  MotorenAnsteuern();
+  // MotorenAnsteuern();
 
   if ((millis() - timeStamp1) > interval1) //Timestamp Auswertung Sensorwerte
   {  
