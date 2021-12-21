@@ -1,52 +1,27 @@
 #include <Arduino.h>
 #include <GLOBALS.h>
+#include <MOTOREN.h>
 
+void MotorenAnsteuern2(int motor1, int motor2, int motorspeed, int direction)       // Controlling direction of motor
+{
+    if (direction == forward)
+    {
+        digitalWrite(motor1 + 1, LOW);
+        digitalWrite(motor2 + 1, LOW);
+    }
+    else
+    {
+        digitalWrite(motor1 + 1, HIGH);
+        digitalWrite(motor2 + 1, HIGH);
+    }
 
-
-void MotorenAnsteuern(){
-if(mpuAngle[X] < -5.0){
-    digitalWrite(dirPin1,LOW); 
-  for(int x = 0; x < STEPS_PER_REV; x++) {
-    digitalWrite(stepPin1,HIGH); 
-    delayMicroseconds(1000); 
-    digitalWrite(stepPin1,LOW); 
-    delayMicroseconds(1000); 
-  }
-  Serial.println("Motor 1");
-}
-
-else if(mpuAngle[X] > 5.0){
-//     Serial.print("ballz");
-//     digitalWrite(dirPin1,HIGH);
-//   for(int x = 0; x < (STEPS_PER_REV * 2); x++) {
-//     digitalWrite(stepPin1,HIGH);
-//     delayMicroseconds(1000);
-//     digitalWrite(stepPin1,LOW);
-//     delayMicroseconds(1000);
-//   }
-    Serial.println("Motor 2");
-}
-
-if(mpuAngle[Y] < -5.0){
-//     digitalWrite(dirPin2,LOW); 
-//   for(int x = 0; x < STEPS_PER_REV; x++) {
-//     digitalWrite(stepPin2,HIGH); 
-//     delayMicroseconds(1000); 
-//     digitalWrite(stepPin2,LOW); 
-//     delayMicroseconds(1000); 
-//   }
-    Serial.println("Motor 3");
-}
-
-else if(mpuAngle[Y] > 5.0){
-//     Serial.print("ballz");
-//     digitalWrite(dirPin2,HIGH);
-//   for(int x = 0; x < (STEPS_PER_REV * 2); x++) {
-//     digitalWrite(stepPin2,HIGH);
-//     delayMicroseconds(1000);
-//     digitalWrite(stepPin2,LOW);
-//     delayMicroseconds(1000);
-//   }
-    Serial.println("Motor 4");
-}
+    for (int i = 0; i < STEPS_PER_REV; i++) // Rotate motor
+    {
+        digitalWrite(motor1, HIGH);
+        digitalWrite(motor2, HIGH);
+        delayMicroseconds(motorspeed);
+        digitalWrite(motor1, LOW);
+        digitalWrite(motor2, LOW);
+        delayMicroseconds(motorspeed);
+    }
 }
