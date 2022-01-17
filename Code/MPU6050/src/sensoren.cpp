@@ -8,8 +8,9 @@ MPU6050 mpu(Wire);
 
 const int maxWinkel = 5;
 const int minWinkel = -5;
+int speedMicro;
 
-void MPUSetup()   // Setup for MPU6050
+void MPUSetup() // Setup for MPU6050
 {
   byte status = mpu.begin();
   Serial.print(F("MPU6050 status: "));
@@ -23,7 +24,7 @@ void MPUSetup()   // Setup for MPU6050
   Serial.println("Done!\n");
 }
 
-void SensorAuslesen()   // Reading MPU6050 Values
+void SensorAuslesen() // Reading MPU6050 Values
 {
   mpu.update();
   mpuAngle[X] = mpu.getAngleX();
@@ -31,35 +32,59 @@ void SensorAuslesen()   // Reading MPU6050 Values
   mpuAngle[Z] = mpu.getAngleZ();
 }
 
-void SensorAuswerten()    // Controlling motors through angle
+float SpeedBerechnung(float winkel) // Calculating speed of motors
 {
-  if (mpuAngle[X] < minWinkel)
+  float speed = 100;
+  return speed;
+}
+
+void SensorAuswerten() // Controlling motors through angle
+{
+  if (mpuAngle[X] < minWinkel && mpuAngle[Y] < minWinkel)
   {
-    speedMicro = SpeedBerechnung(mpuAngle[X] * (-1));
-    MotorenAnsteuern2(stepPin1, stepPin2, speedMicro, forward);
+    speedMicro = SpeedBerechnung(mpuAngle[X]);
+    MotorenAnsteuern4(stepPin1, stepPin2, stepPin3, stepPin4, speedMicro, forward, forward);
+  }
+
+  else if (mpuAngle[X] > maxWinkel && mpuAngle[Y] > maxWinkel)
+  {
+    speedMicro = SpeedBerechnung(mpuAngle[X]);
+    MotorenAnsteuern4(stepPin1, stepPin2, stepPin3, stepPin4, speedMicro, backward, backward);
+  }
+
+  else if (mpuAngle[X] < minWinkel && mpuAngle[Y] > maxWinkel)
+  {
+    speedMicro = SpeedBerechnung(mpuAngle[X]);
+    MotorenAnsteuern4(stepPin1, stepPin2, stepPin3, stepPin4, speedMicro, forward, backward);
+  }
+
+  else if (mpuAngle[X] > maxWinkel && mpuAngle[Y] < minWinkel)
+  {
+    speedMicro = SpeedBerechnung(mpuAngle[X]);
+    MotorenAnsteuern4(stepPin1, stepPin2, stepPin3, stepPin4, speedMicro, backward, forward);
+  }
+
+  else if (mpuAngle[X] < minWinkel)
+  {
+    speedMicro = SpeedBerechnung(mpuAngle[X]);
+    MotorenAnsteuern2(stepPin1, stepPin2, speedMicro, forward, X);
   }
 
   else if (mpuAngle[X] > maxWinkel)
   {
     speedMicro = SpeedBerechnung(mpuAngle[X]);
-    MotorenAnsteuern2(stepPin1, stepPin2, speedMicro, forward);
+    MotorenAnsteuern2(stepPin1, stepPin2, speedMicro, backward, X);
   }
 
-  if (mpuAngle[Y] < minWinkel)
+  else if (mpuAngle[Y] < minWinkel)
   {
-    speedMicro = SpeedBerechnung(mpuAngle[Y] * (-1));
-    MotorenAnsteuern2(stepPin1, stepPin2, speedMicro, forward);
+    speedMicro = SpeedBerechnung(mpuAngle[Y]);
+    MotorenAnsteuern2(stepPin3, stepPin4, speedMicro, forward, Y);
   }
 
   else if (mpuAngle[Y] > maxWinkel)
   {
     speedMicro = SpeedBerechnung(mpuAngle[Y]);
-    MotorenAnsteuern2(stepPin1, stepPin2, speedMicro, forward);
+    MotorenAnsteuern2(stepPin3, stepPin4, speedMicro, backward, Y);
   }
-}
-
-int SpeedBerechnung(int winkel)   // Calculating speed of motors
-{
-  int speed = 0.3657 * pow(winkel, 4) - 18.912 * pow(winkel, 3) + 354.1 * pow(winkel, 2) - 2878.7 * winkel + 9061.7;
-  return speed;
 }

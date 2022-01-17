@@ -7,7 +7,7 @@
 #define Z 2
 
 // MPU Variable
-extern int mpuAngle[3]; // 0 = X, 1 = Y, 2 = Z
+extern float mpuAngle[3]; // 0 = X, 1 = Y, 2 = Z
 
 // Timer Variables
 extern unsigned long timeStamp1;

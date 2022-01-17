@@ -6,6 +6,7 @@ extern MPU6050 mpu;
 extern void MPUSetup();
 extern void SensorAuslesen();
 extern void SensorAuswerten();
+extern float SpeedBerechnung(float winkel);
 
 extern const int minWinkel;
 extern const int maxWinkel;

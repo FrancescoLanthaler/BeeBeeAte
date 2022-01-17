@@ -7,12 +7,12 @@
 #include <MOTOREN.h>
 #include <SENSOREN.h>
 
-int mpuAngle[3]; // 0 = X, 1 = Y, 2 = Z
+float mpuAngle[3]; // 0 = X, 1 = Y, 2 = Z
 
 // Timer Variables
 unsigned long timeStamp1;
 unsigned long timeStamp2;
-unsigned long interval1 = 1000;
+unsigned long interval1 = 200;
 unsigned long interval2 = 50;
 
 // Motoren
@@ -39,11 +39,14 @@ void setup()
 }
 
 void loop()
-{
+{   
   SensorAuslesen();
   if ((millis() - timeStamp1) > interval1) // Timestamp Auswertung Sensorwerte
   {
     timeStamp1 = millis();
     SensorAuswerten();
+    Serial.println(mpuAngle[Z]);
+    Serial.println(mpuAngle[X]);
+    Serial.println(mpuAngle[Y]);
   }
 }

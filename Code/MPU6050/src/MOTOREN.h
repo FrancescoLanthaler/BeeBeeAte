@@ -16,6 +16,7 @@
 #define backward 1
 
 // Methoden
-extern void MotorenAnsteuern2(int motor1, int motor2, int motorspeed, int direction);
+extern void MotorenAnsteuern2(int motor1, int motor2, int motorspeed, int direction, int angle);
+extern void MotorenAnsteuern4(int motor1, int motor2, int motor3, int motor4, int motorspeed, int direction, int direction2);
 
 #endif
