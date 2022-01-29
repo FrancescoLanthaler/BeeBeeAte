@@ -6,6 +6,7 @@
 #include <GLOBALS.h>
 #include <MOTOREN.h>
 #include <SENSOREN.h>
+#include <ESP_NOWlanfra.h>
 
 float mpuAngle[3]; // 0 = X, 1 = Y, 2 = Z
 
@@ -30,12 +31,14 @@ void setup()
   pinMode(dirPin4, OUTPUT);
 
   Serial.begin(115200);
+
   Wire.begin();
 
   timeStamp1 = millis();
 
   // Setup for MPU6050
   MPUSetup();
+  SetupESPNOW();
 }
 
 void loop()
@@ -45,8 +48,10 @@ void loop()
   {
     timeStamp1 = millis();
     SensorAuswerten();
-    Serial.println(mpuAngle[Z]);
-    Serial.println(mpuAngle[X]);
-    Serial.println(mpuAngle[Y]);
+    //sendESPNOW();
+
+    //Serial.println(mpuAngle[Z]);
+    //Serial.println(mpuAngle[X]);
+    //Serial.println(mpuAngle[Y]);
   }
 }

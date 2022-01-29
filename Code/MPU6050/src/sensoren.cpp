@@ -34,7 +34,7 @@ void SensorAuslesen() // Reading MPU6050 Values
 
 float SpeedBerechnung(float winkel) // Calculating speed of motors
 {
-  float speed = 100;
+  float speed = 50;
   return speed;
 }
 
