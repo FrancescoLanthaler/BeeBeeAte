@@ -6,8 +6,8 @@
 
 MPU6050 mpu(Wire);
 
-const int maxWinkel = 5;
-const int minWinkel = -5;
+const int maxWinkel = 4;
+const int minWinkel = -4;
 int speedMicro;
 
 void MPUSetup() // Setup for MPU6050
@@ -34,7 +34,7 @@ void SensorAuslesen() // Reading MPU6050 Values
 
 float SpeedBerechnung(float winkel) // Calculating speed of motors
 {
-  float speed = 50;
+  float speed = 100;
   return speed;
 }
 
