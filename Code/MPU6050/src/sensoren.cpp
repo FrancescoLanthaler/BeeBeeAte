@@ -6,8 +6,8 @@
 
 MPU6050 mpu(Wire);
 
-const int maxWinkel = 4;
-const int minWinkel = -4;
+const int maxWinkel = 5;
+const int minWinkel = -5;
 int speedMicro;
 
 void MPUSetup() // Setup for MPU6050
@@ -46,16 +46,16 @@ void SensorAuswerten() // Controlling motors through angle
     MotorenAnsteuern4(stepPin1, stepPin2, stepPin3, stepPin4, speedMicro, forward, forward);
   }
 
-  else if (mpuAngle[X] > maxWinkel && mpuAngle[Y] > maxWinkel)
-  {
-    speedMicro = SpeedBerechnung(mpuAngle[X]);
-    MotorenAnsteuern4(stepPin1, stepPin2, stepPin3, stepPin4, speedMicro, backward, backward);
-  }
-
   else if (mpuAngle[X] < minWinkel && mpuAngle[Y] > maxWinkel)
   {
     speedMicro = SpeedBerechnung(mpuAngle[X]);
     MotorenAnsteuern4(stepPin1, stepPin2, stepPin3, stepPin4, speedMicro, forward, backward);
+  }
+
+  else if (mpuAngle[X] > maxWinkel && mpuAngle[Y] > maxWinkel)
+  {
+    speedMicro = SpeedBerechnung(mpuAngle[X]);
+    MotorenAnsteuern4(stepPin1, stepPin2, stepPin3, stepPin4, speedMicro, backward, backward);
   }
 
   else if (mpuAngle[X] > maxWinkel && mpuAngle[Y] < minWinkel)
@@ -64,25 +64,25 @@ void SensorAuswerten() // Controlling motors through angle
     MotorenAnsteuern4(stepPin1, stepPin2, stepPin3, stepPin4, speedMicro, backward, forward);
   }
 
-  else if (mpuAngle[X] < minWinkel)
+  else if (mpuAngle[X] < minWinkel && (mpuAngle[Y] < maxWinkel && mpuAngle[Y] > minWinkel))
   {
     speedMicro = SpeedBerechnung(mpuAngle[X]);
     MotorenAnsteuern2(stepPin1, stepPin2, speedMicro, forward, X);
   }
 
-  else if (mpuAngle[X] > maxWinkel)
+  else if (mpuAngle[X] > maxWinkel && (mpuAngle[Y] < maxWinkel && mpuAngle[Y] > minWinkel))
   {
     speedMicro = SpeedBerechnung(mpuAngle[X]);
     MotorenAnsteuern2(stepPin1, stepPin2, speedMicro, backward, X);
   }
 
-  else if (mpuAngle[Y] < minWinkel)
+  else if (mpuAngle[Y] < minWinkel && (mpuAngle[X] < maxWinkel && mpuAngle[X] > minWinkel))
   {
     speedMicro = SpeedBerechnung(mpuAngle[Y]);
     MotorenAnsteuern2(stepPin3, stepPin4, speedMicro, forward, Y);
   }
 
-  else if (mpuAngle[Y] > maxWinkel)
+  else if (mpuAngle[Y] > maxWinkel && (mpuAngle[X] < maxWinkel && mpuAngle[X] > minWinkel))
   {
     speedMicro = SpeedBerechnung(mpuAngle[Y]);
     MotorenAnsteuern2(stepPin3, stepPin4, speedMicro, backward, Y);

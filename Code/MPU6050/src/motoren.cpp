@@ -10,21 +10,24 @@ void MotorenAnsteuern2(int motor1, int motor2, int motorspeed, int direction, in
     digitalWrite(motor1 + 1, direction);
     digitalWrite(motor2 + 1, direction);
 
-    for (int i = 0; i < STEPS_PER_REV; i++) // Rotate motor
+    while() // Rotate motor
     {
         digitalWrite(motor1, HIGH);
         digitalWrite(motor2, HIGH);
         SensorAuslesen();
-        if (mpuAngle[angle] < 5.0 && mpuAngle[angle] > -5.0)
+        if (mpuAngle[angle] < maxWinkel && mpuAngle[angle] > minWinkel)
             return;
-        
-        delayMicroseconds(100);
+        delayMicroseconds(50);
         digitalWrite(motor1, LOW);
         digitalWrite(motor2, LOW);
+
+    
         SensorAuslesen();
-        if (mpuAngle[angle] < 5.0 && mpuAngle[angle] > -5.0)
-            return;
-        delayMicroseconds(100);
+        if((angle == X) && (mpuAngle[Y] > maxWinkel || mpuAngle[Y] < minWinkel))
+            SensorAuswerten();
+        if((angle == Y) && (mpuAngle[X] > maxWinkel || mpuAngle[X] < minWinkel))
+            SensorAuswerten();
+        delayMicroseconds(50);
         
     }
 }
@@ -43,18 +46,18 @@ void MotorenAnsteuern4(int motor1, int motor2, int motor3, int motor4, int motor
         digitalWrite(motor3, HIGH);
         digitalWrite(motor4, HIGH);
         SensorAuslesen();
-        if ((mpuAngle[X] < 5.0 && mpuAngle[X] > -5.0) || (mpuAngle[Y] < 5.0 && mpuAngle[Y] > -5.0))
+        if ((mpuAngle[X] < maxWinkel && mpuAngle[X] > minWinkel) || (mpuAngle[Y] < maxWinkel && mpuAngle[Y] > minWinkel))
             return;
-        delayMicroseconds(500);
+        delayMicroseconds(50);
 
         digitalWrite(motor1, LOW);
         digitalWrite(motor2, LOW);
         digitalWrite(motor3, LOW);
         digitalWrite(motor4, LOW);
         SensorAuslesen();
-        if ((mpuAngle[X] < 5.0 && mpuAngle[X] > -5.0) || (mpuAngle[Y] < 5.0 && mpuAngle[Y] > -5.0))
+        if ((mpuAngle[X] < maxWinkel && mpuAngle[X] > minWinkel) || (mpuAngle[Y] < maxWinkel && mpuAngle[Y] > minWinkel))
             return;
-        delayMicroseconds(500);
+        delayMicroseconds(50);
 
 
 
