@@ -31,11 +31,6 @@ void setup()
   pinMode(dirPin4, OUTPUT);
 
   Serial.begin(115200);
-
-
-
-
-
   Wire.begin();
 
   timeStamp1 = millis();
@@ -48,11 +43,11 @@ void setup()
 
 void loop()
 {   
-  SensorAuslesen();
+
   if ((millis() - timeStamp1) > interval1) // Timestamp Auswertung Sensorwerte
   {
     timeStamp1 = millis();
-    SensorAuswerten();
+    SensorAusrechnung();
     PIDBerechnung();
   }
 }

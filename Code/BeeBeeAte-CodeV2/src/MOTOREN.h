@@ -36,5 +36,5 @@ extern const int toterWinkel;
 // Methoden
 extern void PIDBerechnung();
 extern void SetupMotor();
-
+extern void SensorAusrechnung();
 #endif
