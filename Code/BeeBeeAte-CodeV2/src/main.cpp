@@ -13,7 +13,7 @@ float mpuAngle[3]; // 0 = X, 1 = Y, 2 = Z
 // Timer Variables
 unsigned long timeStamp1;
 unsigned long timeStamp2;
-unsigned long interval1 = 10;
+unsigned long interval1 = 5;
 unsigned long interval2 = 50;
 
 // Motoren

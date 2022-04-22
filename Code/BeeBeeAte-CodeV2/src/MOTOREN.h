@@ -28,8 +28,8 @@ extern float Ch4PWM;
 extern double motorGain;
 extern double motorStart;
 
-extern const int motor13Channel;
-extern const int motor24Channel;
+extern const int motor12Channel;
+extern const int motor34Channel;
 
 extern const int toterWinkel;
 
