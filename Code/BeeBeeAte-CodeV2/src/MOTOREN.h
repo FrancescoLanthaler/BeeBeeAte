@@ -21,10 +21,6 @@ extern double SetpointX, IstWertX, OutputX;
 
 
 // Motoren
-extern float Ch1PWM;
-extern float Ch2PWM;
-extern float Ch3PWM;
-extern float Ch4PWM;
 extern double motorGain;
 extern double motorStart;
 

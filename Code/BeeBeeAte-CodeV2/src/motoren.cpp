@@ -5,15 +5,16 @@
 #include <PID_v1.h>
 
 int microZeit;
-int maxFrequenz = 7000;
+int maxFrequenz = 10000;
+int offsetFrequenz = 2000;
 
 float Ch1PWM = 0;
 float Ch2PWM = 0;
-float Ch3PWM = 0;
-float Ch4PWM = 0;
+long Ch3PWM = 0;
+long Ch4PWM = 0;
 
-float winkelX;
-float winkelY;
+long winkelX;
+long winkelY;
 float x;
 float y;
 float z;
@@ -22,9 +23,9 @@ float istBerechnungX, istBerechnungY, GyroX, GyroY, filterXAlt, filterYAlt;
 
 
 const int motor12Channel = 0;
-const int motor34Channel = 1;
+const int motor34Channel = 2;
 
-const int toterWinkel = 4;
+const int toterWinkel = 3;
 
 const int stepsPerRev = 1000;
 
@@ -46,8 +47,8 @@ void SetupMotor(){
     pidX.SetSampleTime(10);
     pidY.SetSampleTime(10);
 
-    ledcSetup(motor12Channel, maxFrequenz, 8);
-    ledcSetup(motor34Channel, maxFrequenz, 8);
+    ledcSetup(motor12Channel, 100, 8);
+    ledcSetup(motor34Channel, 1000, 8);
 
     ledcAttachPin(stepPin1, motor12Channel);
     ledcAttachPin(stepPin2, motor12Channel);
@@ -70,16 +71,22 @@ void SensorAusrechnung()
 }
 
 void PIDBerechnung(){
-    //PID-Loop berechnung
+    // PID-Loop berechnung
     IstWertY = istBerechnungY;
     pidY.Compute();
     Ch1PWM = abs(OutputY);
-    Ch1PWM = map(Ch1PWM, 0, 255, 3000, maxFrequenz);        // PID Output wird auf eine Frequenz aufgespreitzt
+
+    Ch1PWM = abs(winkelY * winkelY*2); 
+    Ch1PWM = Ch1PWM;
+    Ch1PWM += offsetFrequenz;       // PID Output wird auf eine Frequenz aufgespreitzt
 
     IstWertX = istBerechnungX;
     pidX.Compute();
     Ch2PWM = abs(OutputX);
-    Ch2PWM = map(Ch2PWM, 0, 255, 3000, maxFrequenz);
+
+    Ch2PWM = abs(winkelX * winkelX*2); 
+    Ch2PWM = Ch2PWM;
+    Ch2PWM += offsetFrequenz; 
 
     // Serial Output
     Serial.print("Y: ");
@@ -87,13 +94,13 @@ void PIDBerechnung(){
     Serial.print(" X: ");
     Serial.print(winkelX);
     Serial.print("mixY: ");
-    Serial.print(mpu.getAngleY());
+    Serial.print(Ch1PWM);
     Serial.print(" mixX: ");
-    Serial.println(mpu.getAngleX());
+    Serial.println(Ch2PWM);
 
     // Auflösung 8!!!
-    ledcSetup(motor12Channel, Ch1PWM, 8);
-    ledcSetup(motor34Channel, Ch2PWM, 8);
+    ledcSetup(motor12Channel, Ch2PWM, 8);
+    ledcSetup(motor34Channel, Ch1PWM, 8);
 
     // Motor Ansteuerung
     if (winkelX <= toterWinkel*-1){
