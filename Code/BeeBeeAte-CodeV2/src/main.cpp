@@ -6,18 +6,13 @@
 #include <GLOBALS.h>
 #include <MOTOREN.h>
 #include <SENSOREN.h>
-#include <ESP_NOWlanfra.h>
 
 float mpuAngle[3]; // 0 = X, 1 = Y, 2 = Z
 
 // Timer Variables
 unsigned long timeStamp1;
 unsigned long timeStamp2;
-unsigned long interval1 = 5;
-unsigned long interval2 = 50;
-
-// Motoren
-const int STEPS_PER_REV = 200;
+unsigned long interval1 = 2;
 
 void setup()
 {
@@ -33,21 +28,18 @@ void setup()
   Serial.begin(115200);
   Wire.begin();
 
-  timeStamp1 = millis();
-
   // Setup for MPU6050
   MPUSetup();
-  SetupESPNOW();
   SetupMotor();
+  timeStamp1 = millis();
 }
 
 void loop()
-{   
-
+{
   if ((millis() - timeStamp1) > interval1) // Timestamp Auswertung Sensorwerte
   {
     timeStamp1 = millis();
-    SensorAusrechnung();
-    PIDBerechnung();
+    WinkelFilter();
+    MotorSteuerung();
   }
 }

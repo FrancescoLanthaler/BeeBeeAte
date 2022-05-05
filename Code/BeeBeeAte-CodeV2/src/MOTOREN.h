@@ -15,11 +15,6 @@
 #define forward 0
 #define backward 1
 
-// PID
-extern double SetpointY, IstWertY, OutputY;
-extern double SetpointX, IstWertX, OutputX;
-
-
 // Motoren
 extern double motorGain;
 extern double motorStart;
@@ -27,10 +22,10 @@ extern double motorStart;
 extern const int motor12Channel;
 extern const int motor34Channel;
 
-extern const int toterWinkel;
+extern const float toterWinkel;
 
 // Methoden
-extern void PIDBerechnung();
+extern void MotorSteuerung();
 extern void SetupMotor();
-extern void SensorAusrechnung();
+extern void WinkelFilter();
 #endif

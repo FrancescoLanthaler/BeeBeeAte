@@ -6,9 +6,6 @@
 
 MPU6050 mpu(Wire);
 
-
-int speedMicro;
-
 void MPUSetup() // Setup for MPU6050
 {
   byte status = mpu.begin();
@@ -23,15 +20,3 @@ void MPUSetup() // Setup for MPU6050
   Serial.println("Done!\n");
 }
 
-void SensorAuslesen() // Reading MPU6050 Values
-{
-  mpu.update();
-  mpuAngle[X] = mpu.getAngleX();
-  mpuAngle[Y] = mpu.getAngleY();
-  mpuAngle[Z] = mpu.getAngleZ();
-}
-
-void SensorAuswerten() // Controlling motors through angle
-{
-
-}
