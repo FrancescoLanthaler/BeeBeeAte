@@ -5,7 +5,7 @@
 
 // Frequenzen
 int maxFrequenz = 10000;
-int offsetFrequenz = 4000;
+int offsetFrequenz = 2500;
 float Ch1PWM, Ch2PWM;
 
 long winkelX, winkelY;
@@ -16,7 +16,7 @@ float filterXAlt, filterYAlt;
 const int motor12Channel = 0;
 const int motor34Channel = 2;
 
-const float toterWinkel = 2.5;
+const float toterWinkel = 3;
 
 void SetupMotor()
 {
@@ -32,8 +32,8 @@ void SetupMotor()
 void WinkelFilter()
 {
     mpu.update();
-    winkelX = 0.3 * filterXAlt + 0.7 * mpu.getAngleX(); // Filter für Winkel
-    winkelY = 0.3 * filterYAlt + 0.7 * mpu.getAngleY();
+    winkelX = 0.4 * filterXAlt + 0.6 * mpu.getAngleX(); // Filter für Winkel
+    winkelY = 0.4 * filterYAlt + 0.6 * mpu.getAngleY();
 }
 
 void MotorSteuerung()
@@ -90,5 +90,5 @@ void MotorSteuerung()
     else
     {
         ledcWrite(motor34Channel, 0);
-    }
+    } 
 }
